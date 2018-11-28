@@ -3,11 +3,11 @@ Practice DEFINING and CALLING
      FUNCTIONS
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
-         Aaron Wilkin, their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Aaron Wilkin, their colleagues, and Yu Xin.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
-# TODO: 2.
+# DONE: 2.
 #   Allow this module to use the  rosegraphics.py  module by marking the
 #     src
 #   folder in this project as a "Sources Root", as follows:
@@ -18,9 +18,12 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 ###############################################################################
 
 import rosegraphics as rg
+import math
 
 
 def main():
+    print(hypo(3,4))
+    wt("gold",10)
     """
     TESTS the functions that you will write below.
     You write the tests per the _TODO_s below.
@@ -28,7 +31,7 @@ def main():
 
 
 ###############################################################################
-# TODO: 3a.  Define a function immediately below this _TODO_.
+# DONE: 3a.  Define a function immediately below this _TODO_.
 #   It takes two arguments that denote, for a right triangle,
 #   the lengths of the two sides adjacent to its right angle,
 #   and it returns the length of the hypotenuse of that triangle.
@@ -40,7 +43,8 @@ def main():
 #   to test whether you defined the function correctly.
 #
 ###############################################################################
-
+def hypo(a,b):
+    return math.sqrt(a ** 2 + b ** 2)
 
 ###############################################################################
 # TODO: 4a.  Define a function immediately below this _TODO_.
@@ -69,7 +73,15 @@ def main():
 #   for the arguments) to test whether you defined the function correctly.
 #
 ###############################################################################
-
+def wt(a,b):
+    window = rg.TurtleWindow()
+    turtlegreen = rg.SimpleTurtle("turtle")
+    turtleother = rg.SimpleTurtle()
+    turtlegreen.pen = rg.Pen("green",b)
+    turtleother.pen = rg.Pen(a, 5)
+    turtlegreen.forward(100)
+    turtleother.backward(100)
+    window.close_on_mouse_click()
 
 ###############################################################################
 # TODO: 5.
